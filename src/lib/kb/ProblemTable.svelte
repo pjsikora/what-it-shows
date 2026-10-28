@@ -33,7 +33,7 @@
 </script>
 
 <p class="sum">
-  <strong>{merged.length}</strong> reports in #{ticket} ({exported} rows in the export, one per id) ·
+  <strong>{merged.length}</strong> reports in #{ticket} ({exported} rows in the export, counted once per id) ·
   <strong>{rows.length}</strong>
   {rows.length === 1 ? 'problem' : 'problems'}
 </p>
