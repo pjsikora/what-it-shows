@@ -13,8 +13,11 @@ signature: pjsikora
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
 
-  const repo = 'https://github.com/pjsikora/what-it-shows/issues';
-  const issues = { parser: `${repo}/1`, hint: `${repo}/2`, 'one-day move': `${repo}/3` };
+  const issues = {
+    parser: 'https://github.com/pjsikora/what-it-shows/issues/1',
+    hint: 'https://github.com/pjsikora/what-it-shows/issues/2',
+    'one-day move': 'https://github.com/pjsikora/what-it-shows/issues/3',
+  };
 </script>
 
 [#4471](/kb/incidents/4471) was merged on subject lines ([decision 0001](/kb/decisions/0001-dedupe-by-subject))
@@ -31,13 +34,15 @@ Not one issue. Each problem below has its own ticket, and each needs its own fix
 
 1. **`parser`: the shared parser reads dates month first.** Every tenant in #4471 writes the day first,
    so their dates come out with the month and day swapped: "Booked for 2 July. The invite says
-   7 February." The queued fix is for this one.
+   7 February." The queued fix is for this one. Ticket: [pjsikora/what-it-shows#1](https://github.com/pjsikora/what-it-shows/issues/1).
 2. **`hint`: booking-v3 prints the wrong hint.** Its date field says `MM/DD/YYYY`, but the form reads the
    tenant's day-first order. People type what the hint tells them, so the swap happens before the parser
    sees the date. Only form reports from booking-v3 tenants have it. The parser fix leaves it as it is.
+   Ticket: [pjsikora/what-it-shows#2](https://github.com/pjsikora/what-it-shows/issues/2).
 3. **`one-day move`: the date moves by one day, with no swap.** "Client in Lisbon got Tuesday. Client in
    Toronto got Monday." A month and day swap cannot do that; a time zone can. The desk noted these in
    `desk-notes.json` and filed them under `parser` by tenant.
+   Ticket: [pjsikora/what-it-shows#3](https://github.com/pjsikora/what-it-shows/issues/3).
 
 ## How they were told apart
 
