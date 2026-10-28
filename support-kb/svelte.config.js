@@ -12,8 +12,11 @@ export default {
     mdsvex({ extensions: ['.svx'], layout: { runbook } }),
   ],
   kit: {
-    adapter: adapter({ pages: 'build', assets: 'build', strict: false }),
+    // Published with GitHub Pages from the repo's docs/ folder.
+    adapter: adapter({ pages: '../docs', assets: '../docs', strict: false }),
+    paths: { base: '/what-it-shows' },
     alias: { '#lib': 'src/lib' },
-    prerender: { entries: ['/kb'], handleHttpError: 'warn' },
+    // The pages link to /kb/… without the base, so list every route instead of crawling.
+    prerender: { entries: ['*'], handleHttpError: 'warn' },
   },
 };
