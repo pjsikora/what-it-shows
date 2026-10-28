@@ -1,0 +1,61 @@
+---
+layout: runbook
+title: '#4471 · three problems, not one'
+owner: pjsikora
+status: open
+reviewed: 2026-10-28
+signature: Piotr Sikora (pjsikora)
+---
+
+<script>
+  import ProblemTable from '#lib/kb/ProblemTable.svelte';
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+
+  const repo = 'https://github.com/pjsikora/what-it-shows/issues';
+  const issues = { parser: `${repo}/1`, hint: `${repo}/2`, 'one-day move': `${repo}/3` };
+</script>
+
+[#4471](/kb/incidents/4471) was merged on subject lines ([decision 0001](/kb/decisions/0001-dedupe-by-subject))
+and marked known: one issue, one fix queued. Read by tenant and by what the reporters wrote, it holds three
+problems. The queued parser fix closes only the first one.
+
+<Callout kind="warn">
+Not one issue. Each problem below has its own ticket, and each needs its own fix.
+</Callout>
+
+## The problems
+
+<ProblemTable ticket={4471} {issues} />
+
+1. **`parser`: the shared parser reads dates month first.** Every tenant in #4471 writes the day first,
+   so their dates come out with the month and day swapped: "Booked for 2 July. The invite says
+   7 February." The queued fix is for this one.
+2. **`hint`: booking-v3 prints the wrong hint.** Its date field says `MM/DD/YYYY`, but the form reads the
+   tenant's day-first order. People type what the hint tells them, so the swap happens before the parser
+   sees the date. Only form reports from booking-v3 tenants have it. The parser fix leaves it as it is.
+3. **`one-day move`: the date moves by one day, with no swap.** "Client in Lisbon got Tuesday. Client in
+   Toronto got Monday." A month and day swap cannot do that; a time zone can. The desk noted these in
+   `desk-notes.json` and filed them under `parser` by tenant.
+
+## How they were told apart
+
+- **Counted once per id.** The export has more rows than reports, because its pages overlap.
+- **By tenant, not by intake tag.** `intakeTag` is a guess from the reporter's browser. The cause comes from
+  the tenant's locale and booking form (`causes.ts`), so the "tagged as" counts in the desk's table below
+  do not match the problem counts.
+- **By the body, not the subject.** The same subject line shows up under all three problems.
+
+## The desk's view, for comparison
+
+<CauseTable ticket={4471} />
+
+## What changes
+
+- Ship the parser fix for `parser` only. Do not close #4471's other reports with it.
+- Fix the booking-v3 hint so it prints the tenant's order.
+- Look at how invite times are converted between time zones for the `one-day move` reports.
+- Subject-line matching merged all three into one ticket. A new decision record should replace 0001.
+
+<RenderStamp {signature} />
