@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="../../../_app/immutable/entry/start.C4fUcYUA.js" rel="modulepreload">
+    <link href="../../../_app/immutable/entry/start.gWfI6-8H.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DnoyNMba.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/DTnHDWUd.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/DHXvyTjR.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DXhvxdpI.js" rel="modulepreload">
-		<link href="../../../_app/immutable/entry/app.oGNhqncb.js" rel="modulepreload">
+		<link href="../../../_app/immutable/entry/app.B3u7D_Er.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/4HIIzLmj.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/B4WlwwdY.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/CGyox8To.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/gCpT5-Oq.js" rel="modulepreload">
 		<link href="../../../_app/immutable/nodes/0.Cg-FDWb4.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BHsyMl1J.js" rel="modulepreload">
-		<link href="../../../_app/immutable/nodes/5.CwdttxFu.js" rel="modulepreload">
-		<link href="../../../_app/immutable/chunks/DMJhNAEV.js" rel="modulepreload">
+		<link href="../../../_app/immutable/nodes/5.Ct68I-I8.js" rel="modulepreload">
+		<link href="../../../_app/immutable/chunks/Bmdv6KdK.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BMg7KjJ0.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/DR7RVcJr.js" rel="modulepreload">
 		<link href="../../../_app/immutable/chunks/BsPnvk72.js" rel="modulepreload">
@@ -37,11 +37,11 @@ Ticket: <a href="https://github.com/pjsikora/what-it-shows/issues/2" rel="nofoll
 Toronto got Monday.” A month and day swap cannot do that; a time zone can. The desk noted these in <code>desk-notes.json</code> and filed them under <code>parser</code> by tenant.
 Ticket: <a href="https://github.com/pjsikora/what-it-shows/issues/3" rel="nofollow">pjsikora/what-it-shows#3</a>.</li></ol> <h2>How they were told apart</h2> <ul><li><strong>Counted once per id.</strong> The export has more rows than reports, because its pages overlap.</li> <li><strong>By tenant, not by intake tag.</strong> <code>intakeTag</code> is a guess from the reporter’s browser. The cause comes from
 the tenant’s locale and booking form (<code>causes.ts</code>), so the “tagged as” counts in the desk’s table below
-do not match the problem counts.</li> <li><strong>By the body, not the subject.</strong> The same subject line shows up under all three problems.</li></ul> <h2>The desk’s view, for comparison</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>What changes</h2> <ul><li>Ship the parser fix for <code>parser</code> only. Do not close #4471’s other reports with it.</li> <li>Fix the booking-v3 hint so it prints the tenant’s order.</li> <li>Look at how invite times are converted between time zones for the <code>one-day move</code> reports.</li> <li>Subject-line matching merged all three into one ticket. A new decision record should replace 0001.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-EP3M-5E7M</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
+do not match the problem counts.</li> <li><strong>By the body, not the subject.</strong> The same subject line shows up under all three problems.</li></ul> <h2>The desk’s view, for comparison</h2> <p class="sum svelte-12oyimm"><strong>412</strong> reports merged into #4471 · <strong>2</strong> causes</p> <table><thead><tr><th>cause</th><th>reports</th><th>tagged as</th><th>tenants</th><th>seen</th><th></th></tr></thead><tbody><!--[--><tr class="svelte-12oyimm"><td class="svelte-12oyimm"><code>parser</code></td><td class="svelte-12oyimm">379</td><td class="tags svelte-12oyimm">parser ×356 · hint ×23</td><td class="svelte-12oyimm">11</td><td class="svelte-12oyimm">2026-04-01 → 2026-10-04</td><td class="svelte-12oyimm">#4471</td></tr><tr class="svelte-12oyimm wrong"><td class="svelte-12oyimm"><code>hint</code></td><td class="svelte-12oyimm">33</td><td class="tags svelte-12oyimm">hint ×18 · parser ×15</td><td class="svelte-12oyimm">3</td><td class="svelte-12oyimm">2026-04-17 → 2026-09-22</td><td class="svelte-12oyimm">not this ticket — no ticket of its own</td></tr><!--]--></tbody></table> <!--[--><!--[0--><p class="note svelte-12oyimm">5 reports read as a one-day move; filed under <code>parser</code> by tenant.</p><!--]--><!--[-1--><!--]--><!--]--><!----> <h2>What changes</h2> <ul><li>Ship the parser fix for <code>parser</code> only. Do not close #4471’s other reports with it.</li> <li>Fix the booking-v3 hint so it prints the tenant’s order.</li> <li>Look at how invite times are converted between time zones for the <code>one-day move</code> reports.</li> <li>Subject-line matching merged all three into one ticket. A new decision record should replace 0001.</li></ul> <!--[0--><p class="stamp svelte-1280m42">desk ref <b class="svelte-1280m42">DR-ZPRP-YVFS</b></p><!--]--><!----><!----></main> <footer class="svelte-e2jw2j">Pages are written by people. Tables and charts are built from data at render time.</footer></div><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
 			
 			<script>
 				{
-					__sveltekit_r5edoy = {
+					__sveltekit_87zxj2 = {
 						base: new URL("../../..", location).pathname.slice(0, -1),
 						assets: "/what-it-shows"
 					};
@@ -49,8 +49,8 @@ do not match the problem counts.</li> <li><strong>By the body, not the subject.<
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("../../../_app/immutable/entry/start.C4fUcYUA.js"),
-						import("../../../_app/immutable/entry/app.oGNhqncb.js")
+						import("../../../_app/immutable/entry/start.gWfI6-8H.js"),
+						import("../../../_app/immutable/entry/app.B3u7D_Er.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 5],

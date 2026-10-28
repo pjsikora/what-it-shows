@@ -4,7 +4,7 @@ title: '#4471 · three problems, not one'
 owner: pjsikora
 status: open
 reviewed: 2026-10-28
-signature: pjsikora
+signature: 'v1.eyJzdWIiOiI4MTQiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5MzIyMjE3NywiZXhwIjoxNzkzMzA4NTc3fQ._SQBLYHItsb7zkaT8Pyw3953wdK40iK0zOoqfUYAqrw'
 ---
 
 <script>
